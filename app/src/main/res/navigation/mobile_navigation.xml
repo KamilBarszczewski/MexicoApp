@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_arch_zone">
+
+    <fragment
+        android:id="@+id/navigation_arch_zone"
+        android:name="com.example.mexicoapp.ui.fragment.ArchZoneFragment"
+        android:label="@string/title_archaeological_sites"
+        tools:layout="@layout/fragment_layout">
+        <action
+            android:id="@+id/action_navigation_archZone_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_city"
+        android:name="com.example.mexicoapp.ui.fragment.CityFragment"
+        android:label="@string/title_city"
+        tools:layout="@layout/fragment_layout" >
+        <action
+            android:id="@+id/action_navigation_city_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_nature"
+        android:name="com.example.mexicoapp.ui.fragment.NatureFragment"
+        android:label="@string/title_nature"
+        tools:layout="@layout/fragment_layout" >
+        <action
+            android:id="@+id/action_navigation_nature_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"/>
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.mexicoapp.ui.fragment.DetailFragment"
+        tools:layout="@layout/fragment_detail"
+        android:label="">
+        <action
+            android:id="@+id/action_detailFragment_to_navigation_arch_zone"
+            app:destination="@id/navigation_arch_zone" />
+        <action
+            android:id="@+id/action_detailFragment_to_navigation_city"
+            app:destination="@id/navigation_city" />
+        <action
+            android:id="@+id/action_detailFragment_to_navigation_nature"
+            app:destination="@id/navigation_nature" />
+        <action
+            android:id="@+id/action_detailFragment_to_weatherFragment"
+            app:destination="@id/weatherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.example.mexicoapp.ui.fragment.WeatherFragment"
+        tools:layout="@layout/fragment_weather"
+        android:label="">
+        <action
+            android:id="@+id/action_weatherFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+</navigation>
